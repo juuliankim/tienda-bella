@@ -1,12 +1,23 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/cartContext";
 import {table} from './cart.module.scss' 
 import {Link} from 'react-router-dom'
+import { getFirestore } from "../../firebase";
 
 const CartComponent = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [tel, setTel] = useState('') 
   const { cart, removeCart, clearCart, totalCost, itemCost } = useContext(CartContext);
 
-  console.log("cart", cart);
+  const finalizarCompra = () => {
+    
+    let newOrder = { buyer: {name: name, email: email, telefono: tel}, items: [...cart], total: totalCost()} 
+    console.log(newOrder)
+    const fsBdD = getFirestore()
+    const OrdenesCollection = fsBdD.collection("ORDENES")
+    OrdenesCollection.add(newOrder)
+  }
 
   return (
     <>
@@ -60,6 +71,11 @@ const CartComponent = () => {
         </Link>
         </>
       )}
+      <p>Agrega tus datos para finalizar la compra</p>
+      <input type="text" placeholder="Nombre" onChange={(e) => { setName(e.target.value)}}/>
+      <input type="text" placeholder="Email" onChange={(e) => { setEmail(e.target.value)}}/>
+      <input type="text" placeholder="Telefono" onChange={(e) => { setTel(e.target.value)}}/><br/>
+      <button onClick={() => finalizarCompra()}>Comprar</button>
     </>
   );
 };
