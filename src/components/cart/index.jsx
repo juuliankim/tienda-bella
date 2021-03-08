@@ -47,7 +47,7 @@ const CartComponent = () => {
           </tbody>
           <tbody>
             <td></td>
-            <td>Precio total: ${totalCost}</td>
+            <td>Precio total: ${totalCost()}</td>
             <td></td>
             <td><button onClick={clearCart}>Limpiar Carrito</button></td>
           </tbody>

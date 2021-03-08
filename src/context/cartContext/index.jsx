@@ -30,7 +30,7 @@ const CartProvider = ({ children }) => {
   const clearCart = () => setCart([])
 
   const totalCost = () => {           
-    const cost = cart.reduce((acu,item) =>acu + item.price * item.contador,0)
+    const cost = cart.reduce((acu,item) =>acu + item.price * item.contador, 0)
     return cost;  
   }
 
