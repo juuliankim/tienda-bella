@@ -28,20 +28,20 @@ const CartComponent = () => {
 
           <tbody>
             {cart.map((product) => (
-              <tr key={product.id}>
+              <tr key={product.categoryId}>
                 <td>
-                  <img src={product.url} alt="img" style={{ width: "82px" }} />
+                  <img src={product.image} alt="img" style={{ width: "82px" }} />
                 </td>
 
-                <td>{product.nombre}</td>
+                <td>{product.title}</td>
 
                 <td>{product.contador}</td>
 
-                <td>{product.precio}</td>
+                <td>{product.price}</td>
 
                 <td>{itemCost(product)}</td>
                 
-                <td><button onClick={() => removeCart(product.id)}>Eliminar</button></td>
+                <td><button onClick={() => removeCart(product.categoryId)}>Eliminar</button></td>
               </tr>
             ))}
           </tbody>

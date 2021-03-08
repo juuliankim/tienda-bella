@@ -6,11 +6,11 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addCart = (item) => {
-    const exist = cart.find((x) => x.id === item.id);
+    const exist = cart.find((x) => x.categoryId === item.categoryId);
     if (exist) {
       setCart(
         cart.map((x) =>
-          x.id === item.id
+          x.categoryId === item.categoryId
             ? { ...exist, contador: exist.contador + item.contador }
             : x
         )
@@ -22,8 +22,8 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  const removeCart =(id)=>{                     
-    const remove = cart.filter(item => item.id !== id);
+  const removeCart =(categoryId)=>{                     
+    const remove = cart.filter(item => item.categoryId !== categoryId);
     setCart(remove)         
   }
 

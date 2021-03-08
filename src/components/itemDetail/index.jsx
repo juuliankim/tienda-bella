@@ -13,11 +13,11 @@ const ItemDetailComponent = ({ producto }) => {
     console.log("Ud selecciono ", contador);
     setCarrito(true);
     addCart({
-      id: producto.id,
-      nombre: producto.nombre,
-      precio: producto.precio,
-      url: producto.url,
-      descripcion: producto.descripcion,
+      categoryId: producto.categoryId,
+      title: producto.title,
+      price: producto.price,
+      image: producto.image,
+      description: producto.description,
       stock: producto.stock,
       contador
     });
@@ -28,10 +28,10 @@ const ItemDetailComponent = ({ producto }) => {
   return (
     <>
       <div>
-        <h2>{producto.nombre}</h2>
-        <img src={producto.url} alt="" width="400" height="550" />
-        <p>Precio: {producto.precio}</p>
-        <p>Descripcion: {producto.descripcion}</p>
+        <h2>{producto.title}</h2>
+        <img src={producto.image} alt="" width="400" height="550" />
+        <p>Precio: {producto.price}</p>
+        <p>Descripcion: {producto.description}</p>
       </div>
       <div>
         {carrito ? (

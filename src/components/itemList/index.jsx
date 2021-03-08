@@ -5,7 +5,7 @@ const ItemListComponent = ({ producto }) => {
   return (
     <div className={row}>
       {producto.map((producto) => {
-        return <ItemComponent key={producto.id} producto={producto} />;
+        return <ItemComponent key={producto.categoryId} producto={producto} />;
       })}
     </div>
   );
