@@ -3,6 +3,7 @@ import { CartContext } from "../../context/cartContext";
 import {table} from './cart.module.scss' 
 import {Link} from 'react-router-dom'
 import { getFirestore } from "../../firebase";
+import firebase from 'firebase/app'
 
 const CartComponent = () => {
   const [name, setName] = useState('')
@@ -11,8 +12,7 @@ const CartComponent = () => {
   const { cart, removeCart, clearCart, totalCost, itemCost } = useContext(CartContext);
 
   const finalizarCompra = () => {
-    
-    let newOrder = { buyer: {name: name, email: email, telefono: tel}, items: [...cart], total: totalCost()} 
+    let newOrder = { buyer: {name: name, email: email, telefono: tel}, items: [...cart],date: firebase.firestore.FieldValue.serverTimestamp(), total: totalCost()} 
     console.log(newOrder)
     const fsBdD = getFirestore()
     const OrdenesCollection = fsBdD.collection("ORDENES")
