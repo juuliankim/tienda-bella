@@ -34,10 +34,12 @@ const CartProvider = ({ children }) => {
     return cost;  
   }
 
+  const quantItem = cart.reduce((acumulador,item) =>acumulador + item.contador,0)
+
   const itemCost = (item) => item.price * item.contador;
 
   return (
-    <CartContext.Provider value={{ cart, addCart, removeCart, clearCart, itemCost, totalCost}}>
+    <CartContext.Provider value={{ cart, addCart, removeCart, clearCart, itemCost, totalCost, quantItem}}>
       {children}
     </CartContext.Provider>
   );
