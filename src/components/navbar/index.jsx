@@ -10,9 +10,9 @@ const NavbarComponent = () => {
         <li>
           <Link to={"/categorias"}>Categorias</Link>
           <ul className={subMenu}>
-            <li><Link to={`/categorias/n77F4xngEUhMIh0sux8W`}>Vestido</Link></li>
-            <li><Link to={`/categorias/XP3vcpy5X816dTys1i0m`}>Calza</Link></li>
-            <li><Link to={`/categorias/Ry8xU7oLDREJ73BxzcDq`}>Blusa</Link></li>
+            <li><Link to={`/categorias/Vestidos`}>Vestidos</Link></li>
+            <li><Link to={`/categorias/Calzas`}>Calzas</Link></li>
+            <li><Link to={`/categorias/Blusas`}>Blusas</Link></li>
           </ul>
         </li>
         <li>

@@ -8,19 +8,39 @@ const ItemListContainer = (props) => {
   const [producto, setProducto] = useState([]);
   const {categoryId} = useParams()
 
+  // useEffect(() => {
+  //   const baseDeDatos = getFirestore();
+  //   const itemCollection = baseDeDatos.collection('ITEMS');
+  //   itemCollection.get().then(async (value) => {
+  //       let aux = await Promise.all(value.docs.map( async (product) => {
+  //           const CategoriasCollection = baseDeDatos.collection('CATEGORIAS');
+  //           let auxCategorias = await CategoriasCollection.doc(product.data().categoryId).get()
+  //           return { ...product.data(), categoria:auxCategorias.data() }
+  //       }))
+  //       console.log(aux)
+  //       setProducto(aux);
+  //   })
+  // }, [])
+
   useEffect(() => {
     const baseDeDatos = getFirestore();
-    const itemCollection = baseDeDatos.collection('ITEMS');
-    itemCollection.get().then(async (value) => {
-        let aux = await Promise.all(value.docs.map( async (product) => {
-            const CategoriasCollection = baseDeDatos.collection('CATEGORIAS');
-            let auxCategorias = await CategoriasCollection.doc(product.data().categoryId).get()
-            return { ...product.data(), categoria:auxCategorias.data() }
+    let docRef;
+    if (categoryId) {
+      docRef = baseDeDatos.collection("ITEMS").where("categoryId", "==", categoryId);
+    } else {
+      docRef = baseDeDatos.collection("ITEMS");
+    }
+    console.log("docRef", docRef);
+    docRef.get().then((querySnapshot) => {
+      if (querySnapshot.size === 0) {
+        console.log("No existen resultados");
+      }
+      setProducto(
+        querySnapshot.docs.map((element) => ({...element.data(), id: element.id
         }))
-        console.log(aux)
-        setProducto(aux);
-    })
-  }, [])
+      );
+    });
+  }, [categoryId]);
 
   return (
     <>
