@@ -1,34 +1,19 @@
 import { Link } from "react-router-dom";
 import CartWidgetComponent from "../cartWidget";
-import { menu, subMenu, menuResponsive } from "./navbar.module.scss";
+import { menu, subMenu, title } from "./navbar.module.scss";
 
 const NavbarComponent = () => {
   return (
     <nav>
-      <span>Bella</span>
+      <Link to={'/'} className={title}>Bella</Link>
       <ul className={menu}>
         <li>
-          <Link to={"/"}>Inicio</Link>
-        </li>
-        <li>
-          <Link to={"/tienda"}>Tienda</Link>
+          <Link to={"/categorias"}>Categorias</Link>
           <ul className={subMenu}>
-            <li>
-              <Link to={"/"}>Categoria1</Link>
-            </li>
-            <li>
-              <Link to={"/"}>Categoria2</Link>
-            </li>
-            <li>
-              <Link to={"/"}>Categoria3</Link>
-            </li>
-            <li>
-              <Link to={"/"}>Categoria4</Link>
-            </li>
+            <li><Link to={`/categorias/n77F4xngEUhMIh0sux8W`}>Vestido</Link></li>
+            <li><Link to={`/categorias/XP3vcpy5X816dTys1i0m`}>Calza</Link></li>
+            <li><Link to={`/categorias/Ry8xU7oLDREJ73BxzcDq`}>Blusa</Link></li>
           </ul>
-        </li>
-        <li>
-          <Link to={"/contacto"}>Contacto</Link>
         </li>
         <li>
           <Link to={"/carrito"}>

@@ -2,11 +2,13 @@ nav {
     height: 80px;
     background: rgb(226, 164, 164);
     box-shadow: 0 10px 15px rgba(230, 148, 148, 0.1);
-    span {
+    .title {
         padding: 5px 0 0 40px;
         height: auto;
         font-size: 3rem;
         text-transform: uppercase;
+        text-decoration: none;
+        color: black;
     }
     .menu {
         padding: 0;
@@ -48,6 +50,7 @@ nav {
                 position: relative;
                 right: 40px;
                 top: 20px;
+                z-index: 1;
             }
         }
     }

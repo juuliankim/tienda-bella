@@ -2,9 +2,7 @@ import "./App.css";
 import NavbarComponent from "./components/navbar";
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import HomeComponent from "./components/home";
-import ShopComponent from "./components/shop";
-import ContactoComponent from "./components/contacto";
+import ItemListContainer from "./containers/itemListContainer"
 import CartComponent from "./components/cart";
 import ItemDetailContainer from "./containers/itemDetailContainer";
 import CartProvider from "./context/cartContext";
@@ -16,16 +14,13 @@ const App = () => {
         <NavbarComponent />
         <Switch>
           <Route exact path="/">
-            <HomeComponent />
-          </Route>
-          <Route exact path="/tienda">
-            <ShopComponent />
+            <ItemListContainer />
           </Route>
           <Route path="/tienda/:title">
             <ItemDetailContainer />
           </Route>
-          <Route exact path="/contacto">
-            <ContactoComponent />
+          <Route path="/categorias/:categoryId">
+            <ItemListContainer/>
           </Route>
           <Route exact path="/carrito">
             <CartComponent />
