@@ -15,13 +15,14 @@ const CartComponent = () => {
   
   const finalizarCompra = () => {
     let newOrder = { buyer: {name: name, email: email, telefono: phone}, items: [...cart],date: firebase.firestore.FieldValue.serverTimestamp(), total: totalCost()} 
-    console.log("newOrder", newOrder, "numberId",  orderId)
+    console.log("numberId",  orderId)
     const fsBdD = getFirestore()
     const OrdenesCollection = fsBdD.collection("ORDENES")
     OrdenesCollection.add(newOrder).then((value) => {
       setOrderId(value.id)
     alert("Su numero de orden: " + orderId)
     })
+    clearCart()
   }
 
   return (
@@ -71,7 +72,7 @@ const CartComponent = () => {
       ) : (
         <>
         <div>No se tiene productos seleccionados</div>
-        <Link to={'/tienda'}>
+        <Link to={'/'}>
         <button>Volver a la tienda</button>
         </Link>
         </>
