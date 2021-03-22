@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/juuliankim.github.io/tienda-bella/static/css/main.62ae21af.chunk.css",
+    "main.js": "/juuliankim.github.io/tienda-bella/static/js/main.36cf1a6f.chunk.js",
+    "main.js.map": "/juuliankim.github.io/tienda-bella/static/js/main.36cf1a6f.chunk.js.map",
+    "runtime-main.js": "/juuliankim.github.io/tienda-bella/static/js/runtime-main.e9132414.js",
+    "runtime-main.js.map": "/juuliankim.github.io/tienda-bella/static/js/runtime-main.e9132414.js.map",
+    "static/js/2.a2fce3bd.chunk.js": "/juuliankim.github.io/tienda-bella/static/js/2.a2fce3bd.chunk.js",
+    "static/js/2.a2fce3bd.chunk.js.map": "/juuliankim.github.io/tienda-bella/static/js/2.a2fce3bd.chunk.js.map",
+    "static/js/3.df3e7b42.chunk.js": "/juuliankim.github.io/tienda-bella/static/js/3.df3e7b42.chunk.js",
+    "static/js/3.df3e7b42.chunk.js.map": "/juuliankim.github.io/tienda-bella/static/js/3.df3e7b42.chunk.js.map",
+    "index.html": "/juuliankim.github.io/tienda-bella/index.html",
+    "static/css/main.62ae21af.chunk.css.map": "/juuliankim.github.io/tienda-bella/static/css/main.62ae21af.chunk.css.map",
+    "static/js/2.a2fce3bd.chunk.js.LICENSE.txt": "/juuliankim.github.io/tienda-bella/static/js/2.a2fce3bd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e9132414.js",
+    "static/js/2.a2fce3bd.chunk.js",
+    "static/css/main.62ae21af.chunk.css",
+    "static/js/main.36cf1a6f.chunk.js"
+  ]
+}
