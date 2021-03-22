@@ -38,7 +38,6 @@ const CartProvider = ({ children }) => {
 
   const itemCost = (item) => item.price * item.contador;
 
-
   return (
     <CartContext.Provider value={{ cart, addCart, removeCart, clearCart, itemCost, totalCost, quantItem}}>
       {children}

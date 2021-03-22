@@ -1,3 +1,5 @@
+import { btn, btnb } from "./itemCount.module.scss"
+
 const ItemCountComponent = ({
     onAdd,
     stock,
@@ -24,16 +26,16 @@ const ItemCountComponent = ({
   
     return (
       <>
-        <button onClick={decrementar}>-</button>
-        <b>{contador}</b>
-        <button onClick={incrementar}>+</button>
+        <button className={btn} onClick={decrementar}>-</button>
+        <b> {contador} </b>
+        <button className={btn} onClick={incrementar}>+</button>
         <div>
-          <b>
-            {descripcion}:{stock}
-          </b>
+          <p>
+            {descripcion}: {stock}
+          </p>
         </div>
         <div>
-          <button onClick={handlerOnAdd}>Comprar</button>
+          <button className={btnb} onClick={handlerOnAdd}>Comprar</button>
         </div>
       </>
     );
