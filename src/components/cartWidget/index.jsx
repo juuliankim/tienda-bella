@@ -8,8 +8,8 @@ const CartWidgetComponent = () => {
 
     return (
         <>
-        {quantItem}
         <ShoppingCartIcon/>
+        ({quantItem})
         </>
     )
 }
