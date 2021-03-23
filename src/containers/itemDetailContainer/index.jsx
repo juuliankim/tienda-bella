@@ -1,4 +1,3 @@
-import listaProducto from "../../mocks/listaProducto";
 import ItemDetailComponent from "../../components/itemDetail";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
